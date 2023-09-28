@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Filmothèque</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<h1>Page d'accueil</h1>
+	
+	<a href="/new/film">ajouter</a>
+
+	<div class="row">
+
+		<div th:each="film:${films}" class="card col-4 " style="width: 18rem;">
+			<div class="card-body m-4">
+				<h5 class="card-title" th:text="${film.title}">Card title</h5>
+				<p class="card-text" th:text="${film.synopsis}">Some quick example text to build on the
+					card title and make up the bulk of the card's content.</p>
+				<a th:href="'/film/' + ${film.title}" class="btn btn-primary">Go somewhere</a>
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+</body>
+</html>
